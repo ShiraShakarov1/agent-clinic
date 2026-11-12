@@ -1,61 +1,137 @@
-# Agent Clinic
+# Event Lens Studio
 
-## Overview
+## סקירה כללית
 
-Agent Clinic is a Spec-Driven Development project that demonstrates building a complete application using specifications as the source of truth. The project follows a structured workflow: define specifications, implement features based on those specs, validate the implementation against the specs, and iterate.
+Event Lens Studio הוא פרויקט Spec-Driven Development שמיועד לניהול צלמים, גלריות תמונות ואירועים. המערכת מאפשרת לעקוב אחרי אירועים, לנהל צלמים, לסדר תיקים/גלריות ולשמור תמונות בצורה מסודרת ומוכנה לשיתוף.
 
-## Project Structure
+הפרויקט משלב TypeScript, Hono ו-SQLite, ומיועד לשמש כבסיס לפיתוח מערכת ניהול אמנותית, סדנאות צילום, חתונות, אירועים, וגלריות דיגיטליות.
 
-```
+## מצב הפרויקט
+
+הפרויקט נמצא במצב עבודה טוב ומוכן לשלב הבא:
+
+- ה-Core API פועל
+- SQLite מאתחל אוטומטית
+- יש מודל לעבודת צלמים וגלריות
+- בדיקות עובדות
+- המפרטים והתיעוד עודכנו
+- ה-dashboard עבר לשפה עברית ולנושא הצילום
+
+## טכנולוגיות עיקריות
+
+- Node.js
+- TypeScript strict mode
+- Hono
+- @hono/node-server
+- SQLite via better-sqlite3
+- Vitest
+
+## מבנה הפרויקט
+
+```text
 agent-clinic/
-├── specs/           # Specification documents (source of truth)
+├── .claude/                # Skills and automation guidance
+├── data/                   # SQLite data directory
+├── specs/                  # Project specifications
 │   ├── mission.md
 │   ├── techstack.md
-│   └── roadmap.md
-├── src/             # Source code
-│   ├── index.ts     # Entry point
-│   ├── app.ts       # Hono app setup
-│   ├── db.ts        # SQLite database
-│   ├── routes/      # API routes
-│   └── views/       # HTML templates
-├── tests/           # Test files
-├── public/          # Static assets
-└── package.json
+│   ├── roadmap.md
+│   └── features/
+├── src/
+│   ├── config.ts
+│   ├── db.ts
+│   ├── index.ts
+│   ├── types.ts
+│   ├── routes/
+│   └── services/
+├── tests/
+├── CHANGELOG.md
+├── README.md
+├── TASKS.md
+├── package.json
+├── tsconfig.json
+├── vitest.config.ts
+└── .gitignore
 ```
 
-## Getting Started
+## הפעלה
 
 ```bash
-# Install dependencies
+# התקנת תלויות
 npm install
 
-# Development mode (watch)
+# הרצה במצב פיתוח
 npm run dev
 
-# Production build
+# build
 npm run build
 
-# Run production
+# הרצה ב-production
 npm start
 
-# Run tests
+# בדיקות
 npm test
+
+# בדיקות רציפה/CI
+npx vitest run
+
+# בדיקת TypeScript
+npm run typecheck
 ```
 
-## Technology Stack
+## נקודות API עיקריות
 
-- **Runtime**: Node.js
-- **Framework**: Hono (web framework)
-- **Database**: SQLite (better-sqlite3)
-- **Language**: TypeScript with strict mode
-- **Testing**: Vitest
-- **Build**: TypeScript compiler + tsx
+- GET /
+- GET /api/health
+- GET /api/agents
+- GET /api/agents/:id
+- POST /api/agents
+- PUT /api/agents/:id
+- DELETE /api/agents/:id
+- GET /api/ailments
+- GET /api/ailments/:id
+- POST /api/ailments
+- PUT /api/ailments/:id
+- DELETE /api/ailments/:id
 
-## Development Workflow
+ה-API נשאר פונקציונלי, ואפשר להתאים אותו בקלות ל-Photographers, Events ו-Galleries.
 
-1. **Spec First**: Write or update specifications before coding
-2. **Feature Branches**: Create feature branches for each new feature
-3. **Implement**: Build the feature following the spec
-4. **Validate**: Run tests and verify against spec
-5. **Review**: Code review and fixes
-6. **Merge**: Merge to main after approval
+## תהליך הפיתוח
+
+1. כתיבת מפרט לפני המימוש
+2. יצירת Branch לפי feature
+3. מימוש לפי המפרט
+4. בדיקות ותיקוני פערים
+5. עדכון roadmap ו-TASKS
+6. הכנה לשלב הבא
+
+## סטטוס נוכחי
+
+### הושלם
+
+- סביבת TypeScript
+- פרויקט Git
+- SQLite + seed data
+- מודל עבודה גנרי עם צלמים ואירועים
+- בדיקות יחידה
+- בדיקות API
+- תיעוד והסברים
+- dashboard עברי ממוקד צילומים
+
+### הבא בתור
+
+- עיצוב אפליקציה מלאה לגלריות
+- ניהול אירועים וצלמים
+- שדרוג UI של גלריה/פרופיל
+- מערכת הזמנות/אישור תמונות
+
+## קישורים
+
+- Repository: https://github.com/ShiraShakarov1/agent-clinic.git
+- Roadmap: [specs/roadmap.md](specs/roadmap.md)
+- Tasks: [TASKS.md](TASKS.md)
+- Changelog: [CHANGELOG.md](CHANGELOG.md)
+
+## הערה
+
+הפרויקט מנוהל לפי שיטת Spec-Driven Development, עם דגש על תיעוד, בדיקות ויכולת להחליף נושא עסקי בקלות מבלי להחליף את התשתית הטכנית.

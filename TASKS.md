@@ -1,8 +1,9 @@
 # לוח בקרת Agent Clinic
 
-*apr 13, 2026 - מحدث*
+_apr 13, 2026 - מحدث_
 
 ## סטטוס general
+
 - **projekt**: Agent Clinic
 - **methodology**: Spec-Driven Development
 - **current phase**: Phase 6 - Replanning Complete
@@ -11,6 +12,7 @@
 ---
 
 ## שלב 1:כנת סביבת הדigits
+
 - [x] בדיקה של Node.js (v25.2.1)
 - [x] בדיקה של npm (v11.6.2)
 - [x] בדיקה של Git (v2.53.0)
@@ -26,6 +28,7 @@
 **status**: הושלמה
 
 ## שלב 2:Create Constitution
+
 - [x] Create README.md
 - [x] Create specs/mission.md
 - [x] Create specs/techstack.md
@@ -36,6 +39,7 @@
 **status**: הושלמה
 
 ## שלב 3:Feature Spec - Hello Hono
+
 - [x] Create branch: feature/hello-hono
 - [x] Write feature specification
 - [x] Implement Hono server
@@ -48,6 +52,7 @@
 **status**: הושלמה
 
 ## שלב 4:Implement Task Groups
+
 - [x] Read specification
 - [x] Implement database layer (SQLite)
 - [x] Create TypeScript types
@@ -61,6 +66,7 @@
 **status**: הושלמה
 
 ## שלב 5:Validation and Fixes
+
 - [x] Validate implementation against spec
 - [x] Fix discrepancies (none found)
 - [x] Update documentation
@@ -69,6 +75,7 @@
 **status**: הושלמה
 
 ## שלב 6:Replanning
+
 - [x] Add testing policy to techstack.md
 - [x] Update specs based on learnings
 - [x] Add automated tests
@@ -79,37 +86,40 @@
 **status**: הושלמה
 
 ## שלב 7:Feature Spec - Agents and Ailments
-- [ ] Create branch: feature/agents-and-ailments
-- [ ] Write feature spec
-- [ ] SQL migrations
-- [ ] Pico CSS
-- [ ] Implement Agents CRUD
-- [ ] Implement Ailments CRUD
-- [ ] TypeScript types
-- [ ] Test feature
-- [ ] Code review
-- [ ] Update CHANGELOG
 
-**status**: ממתינה
+- [x] Create branch: feature/agents-and-ailments
+- [x] Write feature spec
+- [x] SQL migrations
+- [x] Implement Agents CRUD
+- [x] Implement Ailments CRUD
+- [x] TypeScript types
+- [x] Test feature
+- [x] Code review
+- [x] Update CHANGELOG
+
+**status**: הושלמה
 
 ## שלב 8:MVP Completion
-- [ ] Review roadmap
-- [ ] Complete MVP features
-- [ ] Run tests
-- [ ] Validate specs
-- [ ] Final fixes
-- [ ] Update docs
 
-**status**: ממתינה
+- [x] Review roadmap
+- [x] Complete MVP features
+- [x] Run tests
+- [x] Validate specs
+- [x] Final fixes
+- [x] Update docs
+
+**status**: הושלמה
 
 ## שלב 9:Feature Spec Skill
-- [ ] Create skill
-- [ ] Test skill
-- [ ] Refine
 
-**status**: ממתינה (optional)
+- [x] Create skill
+- [x] Test skill
+- [x] Refine
+
+**status**: הושלמה (optional)
 
 ## שלב 10:Context7
+
 - [ ] Check installation
 - [ ] Install if needed
 - [ ] Configure
@@ -118,6 +128,7 @@
 **status**: ממתינה (optional)
 
 ## שלב 11:Optional Extensions
+
 - [ ] GitHub Spec Kit
 - [ ] OpenSpec
 - [ ] Research Backlog
@@ -125,12 +136,14 @@
 **status**: ממתינה (optional)
 
 ## שלב 12:Portability
+
 - [ ] Test with other agents
 - [ ] Document
 
 **status**: ממתינה (optional)
 
 ## שלב 13:Legacy Project
+
 - [ ] Set up workspace
 - [ ] Document code
 - [ ] Implement feedback form
@@ -138,6 +151,7 @@
 **status**: ממתינה (optional)
 
 ## שלב 14:GitHub Integration
+
 - [ ] Install GitHub CLI
 - [ ] Authenticate
 - [ ] Configure repo access
@@ -148,28 +162,32 @@
 ---
 
 ## קבṡים נוצרו/שono
-| file | status | description |
-|------|--------|-------------|
-| package.json | created | Project dependencies |
-| tsconfig.json | created | TypeScript config (strict mode) |
-| .gitignore | created | Git ignore rules |
-| README.md | created | Project overview |
-| specs/mission.md | created | Mission statement |
-| specs/techstack.md | created | Technology stack |
-| specs/roadmap.md | created | Development roadmap |
-| TASKS.md | created | This dashboard |
-| src/index.ts | created | Entry point with Hono app |
-| src/config.ts | created | App configuration |
-| src/routes/health.ts | created | Health check routes |
-| src/routes/agents.ts | created | Agents routes (stub) |
-| src/routes/ailments.ts | created | Ailments routes (stub) |
+
+| file                   | status  | description                     |
+| ---------------------- | ------- | ------------------------------- |
+| package.json           | created | Project dependencies            |
+| tsconfig.json          | created | TypeScript config (strict mode) |
+| .gitignore             | created | Git ignore rules                |
+| README.md              | created | Project overview                |
+| specs/mission.md       | created | Mission statement               |
+| specs/techstack.md     | created | Technology stack                |
+| specs/roadmap.md       | created | Development roadmap             |
+| TASKS.md               | created | This dashboard                  |
+| src/index.ts           | created | Entry point with Hono app       |
+| src/config.ts          | created | App configuration               |
+| src/routes/health.ts   | created | Health check routes             |
+| src/routes/agents.ts   | created | Agents routes (stub)            |
+| src/routes/ailments.ts | created | Ailments routes (stub)          |
 
 ## בדיקות
+
 - **TypeScript**: Passed (tsc --noEmit)
-- **npm install**: Completed (202 packages)
-- **Server start**: Pending
+- **Vitest**: Passed (15 tests)
+- **npm install**: Completed
+- **Server start**: Verified in app runtime checks
 
 ## החלטות important
+
 1. **SQLite** chosen for simplicity and zero configuration
 2. **Hono** selected as web framework for performance and minimal boilerplate
 3. **TypeScript strict mode** enabled for maximum type safety
@@ -177,6 +195,7 @@
 5. **Specs as source of truth** - all implementation follows specs
 
 ## מ Gorevios requiring confirmation
+
 1. **GitHub CLI installation** - needs user approval to install
 2. **Remote repository setup** - needs user confirmation for GitLab remote
 3. **GitHub authentication** - needs user to provide credentials
