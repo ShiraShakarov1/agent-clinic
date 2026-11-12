@@ -5,7 +5,7 @@
 ## סטטוס general
 - **projekt**: Agent Clinic
 - **methodology**: Spec-Driven Development
-- **current phase**: Phase 1 - Environment Setup
+- **current phase**: Phase 2 - Constitution Complete
 - **last update**: 2026-11-13
 
 ---

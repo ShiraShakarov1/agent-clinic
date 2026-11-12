@@ -22,6 +22,7 @@ app.use('*', cors());
 app.use('*', prettyJSON());
 
 // Routes
+app.route('/api/health', healthRouter);
 app.route('/api/agents', agentsRouter);
 app.route('/api/ailments', ailmentsRouter);
 
