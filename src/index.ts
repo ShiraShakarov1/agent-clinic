@@ -10,6 +10,7 @@ import { serve } from '@hono/node-server';
 import { prettyJSON } from 'hono/pretty-json';
 
 import { appConfig } from './config.js';
+import { getDatabase, closeDatabase } from './db.js';
 import { healthRouter } from './routes/health.js';
 import { agentsRouter } from './routes/agents.js';
 import { ailmentsRouter } from './routes/ailments.js';
@@ -20,6 +21,9 @@ export const app = new Hono();
 app.use('*', logger());
 app.use('*', cors());
 app.use('*', prettyJSON());
+
+// Initialize database
+getDatabase();
 
 // Routes
 app.route('/api/health', healthRouter);
@@ -66,9 +70,22 @@ app.onError((err, c) => {
   return c.json({ error: 'Internal Server Error' }, 500);
 });
 
+// Graceful shutdown
+process.on('SIGINT', () => {
+  console.log('Shutting down gracefully...');
+  closeDatabase();
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('Shutting down gracefully...');
+  closeDatabase();
+  process.exit(0);
+});
+
 // Start server
 if (import.meta.main) {
-  serve({
+  const server = serve({
     fetch: app.fetch,
     port: appConfig.port,
   });
