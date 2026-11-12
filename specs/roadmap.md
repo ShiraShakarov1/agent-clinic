@@ -15,22 +15,25 @@
 - [x] Review and finalize specs
 
 ## Phase 3: Hello Hono Feature
-- [ ] Create feature branch: feature/hello-hono
-- [ ] Write feature specification
-- [ ] Implement basic Hono server
-- [ ] Add health check endpoint
-- [ ] Add basic HTML page
-- [ ] Test the server
-- [ ] Validate against spec
-- [ ] Commit and prepare for merge
+- [x] Create feature branch: feature/hello-hono
+- [x] Write feature specification
+- [x] Implement basic Hono server
+- [x] Add health check endpoint
+- [x] Add basic HTML page
+- [x] Test the server
+- [x] Validate against spec
+- [x] Commit
 
 ## Phase 4: Task Groups Implementation
-- [ ] Implement task groups feature
-- [ ] Add database migrations
-- [ ] Create REST endpoints
-- [ ] Add validation
-- [ ] Write tests
-- [ ] Run and verify
+- [x] Read specification
+- [x] Implement database layer (SQLite)
+- [x] Create TypeScript types
+- [x] Create service layer (Agent, Ailment)
+- [x] Create REST endpoints (CRUD)
+- [x] Write unit tests (15 tests)
+- [x] Write integration tests (9 tests)
+- [x] Run and verify (all passing)
+- [x] Add testing policy to techstack.md
 
 ## Phase 5: Validation & Fixes
 - [ ] Validate implementation against spec

@@ -5,7 +5,7 @@
 ## סטטוס general
 - **projekt**: Agent Clinic
 - **methodology**: Spec-Driven Development
-- **current phase**: Phase 2 - Constitution Complete
+- **current phase**: Phase 6 - Replanning Complete
 - **last update**: 2026-11-13
 
 ---
@@ -36,42 +36,47 @@
 **status**: הושלמה
 
 ## שלב 3:Feature Spec - Hello Hono
-- [ ] Create branch: feature/hello-hono
-- [ ] Write feature specification
-- [ ] Implement Hono server
-- [ ] Add health check endpoint
-- [ ] Add HTML page
-- [ ] Test server
-- [ ] Validate against spec
-- [ ] Commit
+- [x] Create branch: feature/hello-hono
+- [x] Write feature specification
+- [x] Implement Hono server
+- [x] Add health check endpoint
+- [x] Add HTML page
+- [x] Test server
+- [x] Validate against spec
+- [x] Commit
 
-**status**: ממתינה
+**status**: הושלמה
 
 ## שלב 4:Implement Task Groups
-- [ ] Read specification
-- [ ] Implement features
-- [ ] Add database migrations
-- [ ] Create REST endpoints
-- [ ] Write tests
-- [ ] Run and verify
+- [x] Read specification
+- [x] Implement database layer (SQLite)
+- [x] Create TypeScript types
+- [x] Create service layer (Agent, Ailment)
+- [x] Create REST endpoints (CRUD)
+- [x] Write unit tests (15 tests)
+- [x] Write integration tests (9 tests)
+- [x] Run and verify (all passing)
+- [x] Add testing policy to techstack.md
 
-**status**: ממתינה
+**status**: הושלמה
 
 ## שלב 5:Validation and Fixes
-- [ ] Validate implementation
-- [ ] Fix discrepancies
-- [ ] Update documentation
+- [x] Validate implementation against spec
+- [x] Fix discrepancies (none found)
+- [x] Update documentation
+- [x] Create validation report
 
-**status**: ממתינה
+**status**: הושלמה
 
 ## שלב 6:Replanning
-- [ ] Add testing policy
-- [ ] Update specs
-- [ ] Add automated tests
-- [ ] Improve responsive design
-- [ ] Reorganize roadmap
+- [x] Add testing policy to techstack.md
+- [x] Update specs based on learnings
+- [x] Add automated tests
+- [x] Improve responsive design
+- [x] Reorganize roadmap by priority
+- [x] Create CHANGELOG
 
-**status**: ממתינה
+**status**: הושלמה
 
 ## שלב 7:Feature Spec - Agents and Ailments
 - [ ] Create branch: feature/agents-and-ailments

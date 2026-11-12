@@ -71,10 +71,61 @@ src/
 
 ## Testing Strategy
 
-- **Unit tests**: Test individual functions and services
-- **Integration tests**: Test route handlers with database
-- **Type tests**: Use `tsc --noEmit` to verify types
-- Target: 80%+ test coverage for core logic
+### Testing Policy
+
+All features must include tests following the testing pyramid:
+
+1. **Unit Tests** (70% of tests)
+   - Test individual functions and services in isolation
+   - Use Vitest with in-memory SQLite database
+   - Mock external dependencies
+   - Location: `tests/*.test.ts`
+
+2. **Integration Tests** (20% of tests)
+   - Test route handlers with real database
+   - Use Hono's `app.request()` for HTTP simulation
+   - Test full request-response cycle
+   - Location: `tests/integration/*.test.ts`
+
+3. **Type Tests** (10% of tests)
+   - Use `tsc --noEmit` to verify type safety
+   - Run as part of CI/CD pipeline
+   - Enforce strict mode
+
+### Test Naming Conventions
+- Unit tests: `tests/<module>.test.ts`
+- Integration tests: `tests/integration/<feature>.test.ts`
+- Test describe blocks: `<Feature/Module> - <operation>`
+- Test names: `<expected behavior> - <scenario>`
+
+### Test Commands
+```bash
+# Run all tests
+npm test
+
+# Run tests once (CI mode)
+npm run test:run
+
+# Run tests with coverage
+npm run test:coverage
+
+# Type check
+npm run typecheck
+```
+
+### Coverage Requirements
+- Minimum 80% coverage for core logic
+- 100% coverage for type definitions
+- All routes must have corresponding tests
+- All service methods must be tested
+
+### Testing Workflow
+1. Write feature specification
+2. Write tests alongside implementation
+3. Run `npm run typecheck` before commit
+4. Run `npm test` before commit
+5. Fix failing tests before merging
+6. Review test coverage in code review
 
 ## Deployment
 
