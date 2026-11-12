@@ -1,0 +1,39 @@
+{
+  "name": "agent-clinic",
+  "version": "0.1.0",
+  "description": "Agent Clinic - A Spec-Driven Development project using TypeScript, Hono, and SQLite",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "hono",
+    "typescript",
+    "sqlite",
+    "spec-driven-development"
+  ],
+  "author": "Agent Clinic",
+  "license": "MIT",
+  "dependencies": {
+    "@hono/node-server": "^1.13.0",
+    "hono": "^4.7.0",
+    "better-sqlite3": "^11.3.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0",
+    "eslint": "^9.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0"
+  }
+}
