@@ -1,38 +1,33 @@
 # Event Lens Studio
 
-## סקירה כללית
+A lightweight TypeScript API and dashboard for managing photographers, events, galleries, and photo workflows.
 
-Event Lens Studio הוא פרויקט Spec-Driven Development שמיועד לניהול צלמים, גלריות תמונות ואירועים. המערכת מאפשרת לעקוב אחרי אירועים, לנהל צלמים, לסדר תיקים/גלריות ולשמור תמונות בצורה מסודרת ומוכנה לשיתוף.
+## Overview
 
-הפרויקט משלב TypeScript, Hono ו-SQLite, ומיועד לשמש כבסיס לפיתוח מערכת ניהול אמנותית, סדנאות צילום, חתונות, אירועים, וגלריות דיגיטליות.
+Event Lens Studio is a Spec-Driven Development project designed as a scalable foundation for creative businesses, especially photography studios, event coverage teams, and digital gallery management.
 
-## מצב הפרויקט
-
-הפרויקט נמצא במצב עבודה טוב ומוכן לשלב הבא:
-
-- ה-Core API פועל
-- SQLite מאתחל אוטומטית
-- יש מודל לעבודת צלמים וגלריות
-- בדיקות עובדות
-- המפרטים והתיעוד עודכנו
-- ה-dashboard עבר לשפה עברית ולנושא הצילום
-
-## טכנולוגיות עיקריות
-
-- Node.js
-- TypeScript strict mode
+The project combines:
+- TypeScript
 - Hono
-- @hono/node-server
-- SQLite via better-sqlite3
+- SQLite
 - Vitest
+- Git-based workflow and documentation-first development
 
-## מבנה הפרויקט
+## What this project includes
+
+- Working REST API
+- SQLite database initialization and seed data
+- Photographer/event-focused domain model
+- Service-layer CRUD logic
+- Testing setup for validation
+- Dashboard with an event and photography branding concept
+
+## Project structure
 
 ```text
 agent-clinic/
-├── .claude/                # Skills and automation guidance
 ├── data/                   # SQLite data directory
-├── specs/                  # Project specifications
+├── specs/                  # Requirements and roadmap docs
 │   ├── mission.md
 │   ├── techstack.md
 │   ├── roadmap.md
@@ -51,35 +46,28 @@ agent-clinic/
 ├── package.json
 ├── tsconfig.json
 ├── vitest.config.ts
-└── .gitignore
+├── .gitignore
+└── .claude/
 ```
 
-## הפעלה
+## Getting started
 
 ```bash
-# התקנת תלויות
 npm install
-
-# הרצה במצב פיתוח
 npm run dev
+```
 
-# build
+### Useful commands
+
+```bash
 npm run build
-
-# הרצה ב-production
 npm start
-
-# בדיקות
 npm test
-
-# בדיקות רציפה/CI
 npx vitest run
-
-# בדיקת TypeScript
 npm run typecheck
 ```
 
-## נקודות API עיקריות
+## Main API endpoints
 
 - GET /
 - GET /api/health
@@ -94,44 +82,40 @@ npm run typecheck
 - PUT /api/ailments/:id
 - DELETE /api/ailments/:id
 
-ה-API נשאר פונקציונלי, ואפשר להתאים אותו בקלות ל-Photographers, Events ו-Galleries.
+## Current status
 
-## תהליך הפיתוח
+This repository is in a solid MVP state:
 
-1. כתיבת מפרט לפני המימוש
-2. יצירת Branch לפי feature
-3. מימוש לפי המפרט
-4. בדיקות ותיקוני פערים
-5. עדכון roadmap ו-TASKS
-6. הכנה לשלב הבא
+- Backend is working
+- Database initializes correctly
+- API is functional
+- Tests pass
+- Project documentation is in place
+- Dashboard has been re-themed toward photography and event workflows
 
-## סטטוס נוכחי
+## Development approach
 
-### הושלם
+This project follows a documentation-first and validation-first workflow:
 
-- סביבת TypeScript
-- פרויקט Git
-- SQLite + seed data
-- מודל עבודה גנרי עם צלמים ואירועים
-- בדיקות יחידה
-- בדיקות API
-- תיעוד והסברים
-- dashboard עברי ממוקד צילומים
+1. Define the requirement/spec
+2. Build the feature branch
+3. Implement the code
+4. Validate with tests
+5. Update docs and roadmap
+6. Prepare for the next milestone
 
-### הבא בתור
+## Related docs
 
-- עיצוב אפליקציה מלאה לגלריות
-- ניהול אירועים וצלמים
-- שדרוג UI של גלריה/פרופיל
-- מערכת הזמנות/אישור תמונות
+- [specs/roadmap.md](specs/roadmap.md)
+- [TASKS.md](TASKS.md)
+- [CHANGELOG.md](CHANGELOG.md)
 
-## קישורים
+## Repository
 
-- Repository: https://github.com/ShiraShakarov1/agent-clinic.git
-- Roadmap: [specs/roadmap.md](specs/roadmap.md)
-- Tasks: [TASKS.md](TASKS.md)
-- Changelog: [CHANGELOG.md](CHANGELOG.md)
+- GitHub: https://github.com/ShiraShakarov1/agent-clinic
 
-## הערה
+## Notes
 
-הפרויקט מנוהל לפי שיטת Spec-Driven Development, עם דגש על תיעוד, בדיקות ויכולת להחליף נושא עסקי בקלות מבלי להחליף את התשתית הטכנית.
+The project was originally structured as an agent/clinic concept, but it has been adapted into a more flexible event and photography management direction without changing the underlying technical foundation.
+
+This makes it easy to continue with a real gallery, event booking, or studio operations product later on.
